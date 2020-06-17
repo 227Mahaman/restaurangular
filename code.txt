@@ -1,0 +1,8 @@
+Intégration de material
+1. ng add @angular/material
+2. ng generate @angularmaterial:material-nav --name=main-nav
+Génération de component
+1. Home: ng g c Home;
+2. Carte: ng g c Carte;
+3. Reserve: ng g c Reserve;
+4. Contact: ng g c Contact;
