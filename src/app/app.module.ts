@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes, Router} from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,13 @@ import { HomeComponent } from './home/home.component';
 import { CarteComponent } from './carte/carte.component';
 import { ReserveComponent } from './reserve/reserve.component';
 import { ContactComponent } from './contact/contact.component';
+
+const routes = [
+  { path: '', component: HomeComponent}, //localhost:4200
+  { path: 'carte', component: CarteComponent}, //localhost:4200/carte
+  { path: 'reserve', component: ReserveComponent}, //localhost:4200/reserve
+  { path: 'contact', component: ContactComponent} //localhost:4200/contact
+];
 
 @NgModule({
   declarations: [
@@ -34,7 +42,8 @@ import { ContactComponent } from './contact/contact.component';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

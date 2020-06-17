@@ -6,3 +6,24 @@ Génération de component
 2. Carte: ng g c Carte;
 3. Reserve: ng g c Reserve;
 4. Contact: ng g c Contact;
+Routage
+1. D'abort importons le routage dans le fichier app.module.ts
+    import { RouterModule, Routes, Router } from '@angular/router'
+2. Créons les routes dans un conteneur d'objet: (app.module.ts)
+    const routes = [
+        { path: '', component: HomeComponent}, //localhost:4200
+        { path: 'carte', component: CarteComponent}, //localhost:4200/carte
+        { path: 'reserve', component: ReserveComponent}, //localhost:4200/reserve
+        { path: 'contact', component: ContactComponent} //localhost:4200/contact
+    ];
+3. Ajoutons le moduleRoute dans le tableau des imports: (app.module.ts)
+    En utilisant la fonction forRoot et en lui passant les routes créés
+    RouterModule.forRoot(routes)
+4. Changer les href en routerLink dans le fichier main-nav tout en pointant les pages: (main-nav)
+    routerLink="/"
+    routerLink="/carte"
+    routerLink="/reserve"
+    routerLink="/contact"
+5. Dans main-nav ajouter:
+    <router-outlet></router-outlet> pour afficher les contenus des components
+
